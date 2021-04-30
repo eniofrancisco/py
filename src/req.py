@@ -10,7 +10,7 @@ api = Api(app)
 
 def lerArquivo(tipo, teste):
 	try:
-		if tipo == "" 
+		if tipo == "":
 			f = open("files/sucesso.txt", "r")
 		else:
 			f = open("files/%s_%s.txt" % (tipo, teste), "r")
