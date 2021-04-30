@@ -1,0 +1,34 @@
+<html>
+	<head>
+		<title>Parabéns! Você aprendeu!</title>
+	</head>
+	<body>
+		<H1>Parabéns! Você aprendeu:</H1>
+		<TABLE>
+			<TR>
+				<TD><H4>- Conceito</H4></TD>
+				<TD><H4>- Padrões mais usados</H4></TD>
+			</TR>
+			<TR>
+				<TD><H4>- Construção de um Fluxo</H4></TD>
+				<TD><H4>- Probe (monitoração em tempo real)</H4></TD>
+			</TR>
+			<TR>
+				<TD><H4>- DNS Static Hosts</H4></TD>
+				<TD><H4>- Como detectar e corrigir conflito de porta</H4></TD>
+			</TR>
+			<TR>
+				<TD><H4>- Metodos GET e POST</H4></TD>
+				<TD><H4>- Telnet para identificar indisponibilidade de serviço</H4></TD>
+			</TR>
+			<TR>
+				<TD><H4>- A importância do timeout</H4></TD>
+				<TD><H4>- Sobre tipos de Conteudo (XML, SOAP, JSON, HTML)</H4></TD>
+			</TR>
+			<TR>
+				<TD><H4>- Estrutura de endereco web</H4></TD>
+				<TD><H4>- Identificar quando o erro esta no Negócio/Aplicação</H4></TD>
+			</TR>
+		</TABLE>
+	</body>
+</html>

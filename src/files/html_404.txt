@@ -1,0 +1,12 @@
+<html>
+	<head>
+		<title>Page Not Found!</title>
+	</head>
+	<body>
+		<H1>HTTP Status 404 - / </H1>
+		<H4>type status report</H4>
+		<H4>message /. </H4>
+		<H4>description The requested resource is not available. </H4>
+		<H4>Apache Tomcat/7.0.77 </H4>
+	</body>
+</HTML>
