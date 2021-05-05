@@ -35,9 +35,16 @@ class Simulador(Resource):
 		return Response(response=lerArquivo(arg1, arg2),content_type=tipoContent(arg1),status=200)
 	def post(self, arg1, arg2):
 		return Response(response=lerArquivo(arg1, arg2),content_type=tipoContent(arg1),status=200)
-
 # Add Routes
 api.add_resource(Simulador, '/<arg1>/<arg2>')
+
+class SimuladorRoot(Resource):
+	def get(self, arg1, arg2):
+		return Response(response=lerArquivo(arg1, arg2),content_type=tipoContent(arg1),status=200)
+	def post(self, arg1, arg2):
+		return Response(response=lerArquivo(arg1, arg2),content_type=tipoContent(arg1),status=200)
+# Add Routes
+api.add_resource(SimuladorRoot, '/')
 
 # Main
 if __name__ == '__main__':
