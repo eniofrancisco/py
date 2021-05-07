@@ -27,7 +27,7 @@ def tipoContent(tipo):
 	elif tipo == "xml":
 		return "text/xml"
 	else:
-		return "text/plain"
+		return "text/html"
 
 # Define Classes
 class Simulador(Resource):
