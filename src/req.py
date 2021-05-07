@@ -15,8 +15,8 @@ def lerArquivo(tipo, teste):
 				f = open("files/%s_%s.htm" % (tipo, teste), "r")
 			else:
 				f = open("files/reprovado_001.htm")
-		elif tipo == "":
-			f = open("files/sucesso.htm", "r")
+		elif teste == "":
+			f = open("files/%s_200.htm" % (tipo), "r")
 		else:
 			f = open("files/%s_%s.htm" % (tipo, teste), "r")
 	except Exception:
@@ -45,9 +45,9 @@ api.add_resource(Simulador, '/<arg1>/<arg2>')
 
 # Define Classes
 class SimuladorTipo(Resource):
-	def get(self, arg1, ""):
+	def get(self, arg1):
 		return Response(response=lerArquivo(arg1, ""),content_type=tipoContent(arg1),status=200)
-	def post(self, arg1, ""):
+	def post(self, arg1):
 		return Response(response=lerArquivo(arg1, ""),content_type=tipoContent(arg1),status=200)
 # Add Routes
 api.add_resource(SimuladorTipo, '/<arg1>')
