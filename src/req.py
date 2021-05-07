@@ -43,6 +43,14 @@ class Simulador(Resource):
 # Add Routes
 api.add_resource(Simulador, '/<arg1>/<arg2>')
 
+# Define Classes
+class SimuladorTipo(Resource):
+	def get(self, arg1, ""):
+		return Response(response=lerArquivo(arg1, ""),content_type=tipoContent(arg1),status=200)
+	def post(self, arg1, ""):
+		return Response(response=lerArquivo(arg1, ""),content_type=tipoContent(arg1),status=200)
+# Add Routes
+api.add_resource(SimuladorTipo, '/<arg1>')
 
 # Main
 if __name__ == '__main__':
