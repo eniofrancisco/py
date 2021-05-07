@@ -1,0 +1,103 @@
+<html>
+	<body>
+		<H1>Prova 001</H1>
+
+		<ul>
+			<h4>1 - Serviço Consumidor é quando a empresa consome informações do serviço externo. Serviço Servidor é quando a empresa fornece informações para o serviço externo.</h4>
+			<ul>
+				<li>A) Correto</li>
+				<li>B) Incorreto</li>
+			</ul>
+
+			<h4>2 - O serviço XXXX foi criado na DMZ (área desmilitarizada) da empresa para consumir informações do Serviço Externo. Qual nome de Fluxo está com a nomenclatura correta?</h4>
+			<ul>
+				<li>A) XXXXd_S_MPG_ServicoExterno.</li>
+				<li>B) XXXXd_C_MPG_ServicoExterno.</li>
+				<li>C) XXXX_e_S_MPG_ServicoExterno.</li>
+				<li>D) XXXXe-S-MPG-ServicoExterno.</li>
+				<li>E) XXXXe_C_MPG_ServicoExterno.</li>
+			</ul>
+			
+			<h4>3 - Endereço de entrada é configurado em qual objeto?</h4>
+			<ul>
+				<li>A) HTTP Handler</li>
+				<li>B) XML Manager</li>
+				<li>C) Processing Policy</li>
+				<li>D) Default Backend URL</li>
+				<li>E) User Agent e JSON Settings</li>
+			</ul>
+			
+			<h4>4 - Qual afirmação está correta?</h4>
+			<ul>
+				<li>A) “Probe” é a monitoração em tempo real (online) que possibilita analisar todo o tráfego de mensagens.</li>
+				<li>B) Não é recomendado usar o objeto “default” porque pode danificar outro serviço no momento da instalação em outro ambiente.</li>
+				<li>C) O DataPower XI52 é um dispositivo de segurança e integração.</li>
+				<li>D) Timeout é o tempo máximo de espera de uma resposta. Após terminar este tempo o Fluxo DataPower encerra a solicitação e retorna uma mensagem de erro.</li>
+				<li>E) Todas as respostas anteriores estão corretas.</li>
+			</ul>
+			
+			<h4>5 - Após criar um Fluxo foi observado que a porta já está sendo usada por outro Fluxo. Qual ferramenta do DataPower pode ser usada para listar todas as portas que já estão em uso?</h4>
+			<ul>
+				<li>A) DNS Static Hosts</li>
+				<li>B) TCP Port Status</li>
+				<li>C) Objeto HTTP Handler</li>
+				<li>D) Crypto Tools</li>
+				<li>E) System Control</li>
+			</ul>
+			
+			<h4>6 - Qual método foi usado neste exemplo?</h4> <h4>Solicitação = [Endereço http://192.168.0.26:10000] + [tecla ENTER]. Resposta=dados.</h4>
+			<ul>
+				<li>A) Método <b>POST</b>, utilizado para submeter uma entidade a um recurso específico, frequentemente causando uma mudança no estado do recurso ou efeitos colaterais no servidor.</li>
+				<li>B) Método <b>PUT</b>, substitui todas as atuais representações do recurso de destino pela carga de dados da requisição.</li>
+				<li>C) Método <b>DELETE</b>, remove um recurso específico.</li>
+				<li>D) Método <b>GET</b>, solicita a representação de um recurso específico. Requisições utilizando o método GET devem retornar apenas dados.</li>
+				<li>E) Método <b>HEAD</b>, solicita uma resposta de forma idêntica ao método GET, porém sem conter o corpo da resposta.</li>
+			</ul>
+
+			
+			<h4>7 - Durante os testes foi apresentada a mensagem de erro <i>“Failed to establish a backside connection”</i>. Qual ferramenta do DataPower pode ser usada para confirmar que o endereço http://192.168.0.26:10000 está indisponível ou fora do ar?</h4>
+			<ul>
+				<li>A) “Ping Remote” no “Troubleshooting Panel”</li>
+				<li>B) “TCP Connection Test” no “Troubleshooting Panel”</li>
+				<li>C) “Set Log Level” no “Troubleshooting Panel”</li>
+				<li>D) “Generate Log Event” no “Troubleshooting Panel”</li>
+				<li>E) “Generate Error Report” no “Troubleshooting Panel”</li>
+				<li>F) “Send Error Report” no “Troubleshooting Panel”</li>
+			</ul>
+
+			<h4>8 - Qual a resposta correta dos tipos de conteúdo na ordem abaixo?</h4>
+			<h4><dd>1. &lt;cadastro> &lt;nome>Fulano&lt;/nome> &lt;idade>20&lt;/idade> &lt;/cadastro></dd></h4>
+			<h4><dd>2. &lt;HTML>&lt;body>&lt;img src="imagem1.gif">nome=Fulano idade=20&lt;/body>&lt;/HTML></dd></h4>
+			<h4><dd>3. &lt;SOAP:Envelope> &lt;env:Header/> &lt;env:Body> &lt;cadastro> &lt;nome>Fulano&lt;/nome> &lt;idade>20&lt;/idade> &lt;/cadastro> &lt;/env:Body> &lt;/SOAP:Envelope></dd></h4>
+			<h4><dd>4. [ { "cadastro": { “nome”: “Fulano”, "idade": "20" } } ]</dd></h4>
+			<ul>
+				<li>A) 1=XML, 2=HTML, 3=SOAP, 4=JSOW</li>
+				<li>B) 1=XML, 2=HTML, 3=JSON, 4=SOAP</li>
+				<li>C) 1=XML, 2=SOAP, 3=HTML, 4=JSON</li>
+				<li>D) 1=JSON, 2=HTML, 3=SOAP, 4=XML</li>
+				<li>E) 1=XML, 2=HTML, 3=SOAP, 4=JSON</li>
+			</ul>
+			
+			<h4>9 - Qual opção no campo Response Type é recomendada quando uma mensagem contém o tipo de conteúdo HTML?</h4>
+			<ul>
+				<li>A) JSON</li>
+				<li>B) Non-XML</li>
+				<li>C) Pass through</li>
+				<li>D) SOAP</li>
+				<li>E) XML</li>
+			</ul>
+			
+			<h4>10 - Quais são as associações corretas entre objetos?</h4>
+			<ul>
+				<li>A) Multi-Protocol Gateway contém XML Manager e HTTP Handler </li>
+				<li>B) User Agent contém HTTP Handler</li>
+				<li>C) Processing Action contém Processing Rule e Processing Rule contém Processing Rule contém Processing Policy</li>
+				<li>D) Default Backend URL é um objeto que pertence ao Multi-Protocol Gateway</li>
+				<li>E) O campo Local IP Addres e o campo Port pertencem ao Default Backend URL</li>
+			</ul>
+
+		</ul>
+		
+		<h4>Anote as respostas na sequência e envia ao servidor para saber a aprovação</h4>
+	</body>
+</html>
