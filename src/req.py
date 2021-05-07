@@ -10,7 +10,12 @@ api = Api(app)
 
 def lerArquivo(tipo, teste):
 	try:
-		if tipo == "":
+		if tipo == "certificado":
+			if tipo == "1A2E3A4E5B6D7B8E9B10A":
+				f = open("files/%s_%s.htm" % (tipo, teste), "r")
+			else:
+				f = open("files/reprovado_001.htm")
+		elif tipo == "":
 			f = open("files/sucesso.htm", "r")
 		else:
 			f = open("files/%s_%s.htm" % (tipo, teste), "r")
