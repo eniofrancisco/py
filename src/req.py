@@ -11,11 +11,11 @@ api = Api(app)
 def lerArquivo(tipo, teste):
 	try:
 		if tipo == "":
-			f = open("files/sucesso.txt", "r")
+			f = open("files/sucesso.htm", "r")
 		else:
-			f = open("files/%s_%s.txt" % (tipo, teste), "r")
+			f = open("files/%s_%s.htm" % (tipo, teste), "r")
 	except Exception:
-		f = open("files/html_404.txt", "r")
+		f = open("files/html_404.htm", "r")
 
 	return f.read()
 
@@ -38,13 +38,6 @@ class Simulador(Resource):
 # Add Routes
 api.add_resource(Simulador, '/<arg1>/<arg2>')
 
-class SimuladorRoot(Resource):
-	def get(self, arg1, arg2):
-		return Response(response=lerArquivo(arg1, arg2),content_type=tipoContent(arg1),status=200)
-	def post(self, arg1, arg2):
-		return Response(response=lerArquivo(arg1, arg2),content_type=tipoContent(arg1),status=200)
-# Add Routes
-api.add_resource(SimuladorRoot, '/')
 
 # Main
 if __name__ == '__main__':
