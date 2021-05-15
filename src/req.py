@@ -9,17 +9,11 @@ from json import dumps
 app = Flask(__name__)
 api = Api(app)
 
-#!/usr/bin/python -u
-# -*- coding: UTF-8 -*-
-# http://<url>/cgi-bin/test.py?sql=delete
-import os, sys, cgi, cgitb
-cgitb.enable()
-
 def lerArquivo(tipo, teste):
 	try:
-		argumentos = cgi.FieldStorage()
-		sql = argumentos.getfirst('sql', None)
-		if tipo == "delete":
+		sqlinjection = request.args.get('sql')
+		print('The sqlinjection value is: {%s}' % sqlinjection)
+		if sqlinjection == "delete":
 			f = open("files/sqlinjection.htm", "r")
 		elif tipo == "certificado":
 			if teste == "1A2E3A4E5B6D7B8E9B10A":
@@ -46,8 +40,6 @@ def tipoContent(tipo):
 # Define Classes
 class Simulador(Resource):
 	def get(self, arg1, arg2):
-		sqlinjection = request.args.get('sql')
-		print('The sqlinjection value is: {%s}' % sqlinjection)
 		return Response(response=lerArquivo(arg1, arg2),content_type=tipoContent(arg1),status=200)
 	def post(self, arg1, arg2):
 		return Response(response=lerArquivo(arg1, arg2),content_type=tipoContent(arg1),status=200)
