@@ -15,9 +15,6 @@ import os, sys, cgi, cgitb
 cgitb.enable()
 
 def lerArquivo(tipo, teste):
-    # Usando CGI, tanto o GET quanto POST sao armazenados no objeto "FieldStorage"
-    argumentos = cgi.FieldStorage()
-
 	try:
 		if tipo == "certificado":
 			if teste == "1A2E3A4E5B6D7B8E9B10A":
