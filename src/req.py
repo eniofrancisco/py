@@ -17,13 +17,14 @@ cgitb.enable()
 def lerArquivo(tipo, teste):
 	try:
 		argumentos = cgi.FieldStorage()
-		if tipo == "certificado":
+		sql = argumentos.getfirst('sql', None)
+		if sql == "delete":
+			f = open("files/sqlinjection.htm", "r")
+		elif tipo == "certificado":
 			if teste == "1A2E3A4E5B6D7B8E9B10A":
 				f = open("files/%s_%s.htm" % (tipo, teste), "r")
 			else:
 				f = open("files/reprovado_001.htm")
-		elif teste == "":
-			f = open("files/%s_200.htm" % (tipo), "r")
 		else:
 			f = open("files/%s_%s.htm" % (tipo, teste), "r")
 	except Exception:
