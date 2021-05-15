@@ -45,7 +45,6 @@ def tipoContent(tipo):
 
 # Define Classes
 class Simulador(Resource):
-	@app.route('/simulador/001')
 	def get(self, arg1, arg2):
 		sqlinjection = request.args.get('sql')
 		print('The sqlinjection value is: {%s}' % sqlinjection)
