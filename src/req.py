@@ -30,6 +30,8 @@ def lerArquivo(tipo, teste):
 	except Exception:
 		f = open("files/html_404.htm", "r")
 	
+	print(sql)
+	
 	return f.read()
 
 def tipoContent(tipo):
