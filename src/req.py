@@ -46,11 +46,7 @@ def tipoContent(tipo):
 
 # Define Classes
 class Simulador(Resource):
-	from flask import request
-	@app.route('/simulador/001', methods=['GET'])
 	def get(self, arg1, arg2):
-		sqlinjection = request.args.get('sql')
-		print(sqlinjection)
 		return Response(response=lerArquivo(arg1, arg2),content_type=tipoContent(arg1),status=200)
 	def post(self, arg1, arg2):
 		return Response(response=lerArquivo(arg1, arg2),content_type=tipoContent(arg1),status=200)
