@@ -29,7 +29,9 @@ def lerArquivo(tipo, teste):
 			f = open("files/%s_%s.htm" % (tipo, teste), "r")
 	except Exception:
 		f = open("files/html_404.htm", "r")
-
+	
+	print "sql: '{x}'".format(x=sql)
+	
 	return f.read()
 
 def tipoContent(tipo):
