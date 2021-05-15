@@ -15,13 +15,14 @@ api = Api(app)
 import os, sys, cgi, cgitb
 cgitb.enable()
 
+@app.route('/simulador/001')
 def lerArquivo(tipo, teste):
 	try:
 		argumentos = cgi.FieldStorage()
 		sql = argumentos.getfirst('sql', None)
 		sqlinjection = request.args.get('sql')
-		print('''<h1>The sqlinjection value is: {}</h1>'''.format(sqlinjection))
-		if sql == "delete":
+		print('The sqlinjection value is: {%s}' % sqlinjection)
+		if sqlinjection == "delete":
 			f = open("files/sqlinjection.htm", "r")
 		elif tipo == "certificado":
 			if teste == "1A2E3A4E5B6D7B8E9B10A":
