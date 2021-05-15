@@ -19,7 +19,8 @@ def lerArquivo(tipo, teste):
 	try:
 		argumentos = cgi.FieldStorage()
 		sql = argumentos.getfirst('sql', None)
-		print(sql)
+		sqlinjection = request.args.get('sql')
+		print('''<h1>The sqlinjection value is: {}</h1>'''.format(sqlinjection))
 		if sql == "delete":
 			f = open("files/sqlinjection.htm", "r")
 		elif tipo == "certificado":
