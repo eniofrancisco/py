@@ -15,11 +15,8 @@ api = Api(app)
 import os, sys, cgi, cgitb
 cgitb.enable()
 
-@app.route('/simulador/001', methods=['GET', 'POST'])
 def lerArquivo(tipo, teste):
 	try:
-		sqlreq = request.form['sql']
-		print(sqlreq)
 		argumentos = cgi.FieldStorage()
 		sql = argumentos.getfirst('sql', None)
 		print(sql)
