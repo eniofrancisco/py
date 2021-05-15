@@ -1,5 +1,6 @@
 import requests
 import json
+import requests
 
 from flask import Flask, request, Response
 from flask_restful import Resource, Api
@@ -14,10 +15,14 @@ api = Api(app)
 import os, sys, cgi, cgitb
 cgitb.enable()
 
+@app.route('/simulador/001', methods=['GET', 'POST'])
 def lerArquivo(tipo, teste):
 	try:
+		sqlreq = request.form['sql']
+		print(sqlreq)
 		argumentos = cgi.FieldStorage()
 		sql = argumentos.getfirst('sql', None)
+		print(sql)
 		if sql == "delete":
 			f = open("files/sqlinjection.htm", "r")
 		elif tipo == "certificado":
@@ -29,8 +34,6 @@ def lerArquivo(tipo, teste):
 			f = open("files/%s_%s.htm" % (tipo, teste), "r")
 	except Exception:
 		f = open("files/html_404.htm", "r")
-	
-	print(sql)
 	
 	return f.read()
 
