@@ -30,7 +30,7 @@ def lerArquivo(tipo, teste):
 	except Exception:
 		f = open("files/html_404.htm", "r")
 	
-	print "sql: '{x}'".format(x=sql)
+	print sql
 	
 	return f.read()
 
