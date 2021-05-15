@@ -16,6 +16,7 @@ cgitb.enable()
 
 def lerArquivo(tipo, teste):
 	try:
+		argumentos = cgi.FieldStorage()
 		if tipo == "certificado":
 			if teste == "1A2E3A4E5B6D7B8E9B10A":
 				f = open("files/%s_%s.htm" % (tipo, teste), "r")
