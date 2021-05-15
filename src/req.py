@@ -13,7 +13,7 @@ def lerArquivo(tipo, teste):
 	try:
 		sqlinjection = request.args.get('sql')
 		print('The sqlinjection value is: {%s}' % sqlinjection)
-		if sqlinjection == "delete":
+		if sqlinjection == "select" or sqlinjection == "update" or sqlinjection == "drop" or sqlinjection == "delete" or sqlinjection == "alter" or sqlinjection == "create":
 			f = open("files/sqlinjection.htm", "r")
 		elif tipo == "certificado":
 			if teste == "1A2E3A4E5B6D7B8E9B10A":
