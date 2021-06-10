@@ -39,21 +39,21 @@ def tipoContent(tipo):
 
 # Define Classes
 class Simulador(Resource):
-	def get(self, arg3, arg4):
-		return Response(response=lerArquivo(arg3, arg4),content_type=tipoContent(arg3),status=200)
-	def post(self, arg3, arg4):
-		return Response(response=lerArquivo(arg3, arg4),content_type=tipoContent(arg3),status=200)
+	def get(self, arg1, arg2):
+		return Response(response=lerArquivo(arg1, arg2),content_type=tipoContent(arg1),status=200)
+	def post(self, arg1, arg2):
+		return Response(response=lerArquivo(arg1, arg2),content_type=tipoContent(arg1),status=200)
 # Add Routes
-api.add_resource(Simulador, '/<arg1>/<arg2>/<arg3>/<arg4>')
+api.add_resource(Simulador, '/<arg1>/<arg2>')
 
 # Define Classes
 class SimuladorTipo(Resource):
-	def get(self, arg3):
-		return Response(response=lerArquivo(arg3, ""),content_type=tipoContent(arg3),status=200)
-	def post(self, arg3):
-		return Response(response=lerArquivo(arg3, ""),content_type=tipoContent(arg3),status=200)
+	def get(self, arg1):
+		return Response(response=lerArquivo(arg1, ""),content_type=tipoContent(arg1),status=200)
+	def post(self, arg1):
+		return Response(response=lerArquivo(arg1, ""),content_type=tipoContent(arg1),status=200)
 # Add Routes
-api.add_resource(SimuladorTipo, '/<arg1>/<arg2>/<arg3>')
+api.add_resource(SimuladorTipo, '/<arg1>')
 
 # Main
 if __name__ == '__main__':
