@@ -13,7 +13,7 @@ def lerArquivo(tipo, teste):
 	try:
 		sqlinjection = request.args.get('sql')
 		print('The sqlinjection value is: {%s}' % sqlinjection)
-		if sqlinjection == "select" or sqlinjection == "update" or sqlinjection == "drop" or sqlinjection == "delete" or sqlinjection == "alter" or sqlinjection == "create" or sqlinjection == "drop table" or sqlinjection == "WHERE 1=1" or sqlinjection == "CREATE USER":
+		if sqlinjection == "select" or sqlinjection == "update" or sqlinjection == "drop" or sqlinjection == "delete" or sqlinjection == "alter" or sqlinjection == "create" or sqlinjection == "drop table" or sqlinjection == "where 1=1" or sqlinjection == "create user":
 			f = open("files/sqlinjection.htm", "r")
 		elif tipo == "certificado":
 			if teste == "1A2E3A4E5B6D7B8E9B10A":
@@ -39,21 +39,21 @@ def tipoContent(tipo):
 
 # Define Classes
 class Simulador(Resource):
-	def get(self, arg1, arg2):
-		return Response(response=lerArquivo(arg1, arg2),content_type=tipoContent(arg1),status=200)
-	def post(self, arg1, arg2):
-		return Response(response=lerArquivo(arg1, arg2),content_type=tipoContent(arg1),status=200)
+	def get(self, arg3, arg4):
+		return Response(response=lerArquivo(arg3, arg4),content_type=tipoContent(arg1),status=200)
+	def post(self, arg3, arg4):
+		return Response(response=lerArquivo(arg3, arg4),content_type=tipoContent(arg1),status=200)
 # Add Routes
-api.add_resource(Simulador, '/<arg1>/<arg2>')
+api.add_resource(Simulador, '/<arg1>/<arg2>/<arg3>/<arg4>')
 
 # Define Classes
 class SimuladorTipo(Resource):
-	def get(self, arg1):
-		return Response(response=lerArquivo(arg1, ""),content_type=tipoContent(arg1),status=200)
-	def post(self, arg1):
-		return Response(response=lerArquivo(arg1, ""),content_type=tipoContent(arg1),status=200)
+	def get(self, arg3):
+		return Response(response=lerArquivo(arg3, ""),content_type=tipoContent(arg1),status=200)
+	def post(self, arg3):
+		return Response(response=lerArquivo(arg3, ""),content_type=tipoContent(arg1),status=200)
 # Add Routes
-api.add_resource(SimuladorTipo, '/<arg1>')
+api.add_resource(SimuladorTipo, '/<arg1>/<arg2>/<arg3>')
 
 # Main
 if __name__ == '__main__':
