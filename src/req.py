@@ -38,6 +38,15 @@ def tipoContent(tipo):
 		return "text/html; charset=iso-8859-1"
 
 # Define Classes
+class SimuladorArg4(Resource):
+	def get(self, arg1, arg2, arg3, arg4):
+		return Response(response=lerArquivo(arg3, arg4),content_type=tipoContent(arg4),status=200)
+	def post(self, arg1, arg2, arg3, arg4):
+		return Response(response=lerArquivo(arg3, arg4),content_type=tipoContent(arg4),status=200)
+# Add Routes
+api.add_resource(SimuladorArg4, '/<arg1>/<arg2>/<arg3>/<arg4>')
+
+# Define Classes
 class Simulador(Resource):
 	def get(self, arg1, arg2):
 		return Response(response=lerArquivo(arg1, arg2),content_type=tipoContent(arg1),status=200)
