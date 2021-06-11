@@ -9,7 +9,7 @@ from json import dumps
 app = Flask(__name__)
 api = Api(app)
 
-def lerArquivo(tipo, teste):
+def lerArquivo(api, versao, tipo, teste):
 	try:
 		sqlinjection = request.args.get('sql')
 		print('The sqlinjection value is: {%s}' % sqlinjection)
@@ -17,11 +17,11 @@ def lerArquivo(tipo, teste):
 			f = open("files/sqlinjection.htm", "r")
 		elif tipo == "certificado":
 			if teste == "1A2E3A4E5B6D7B8E9B10A":
-				f = open("files/%s_%s.htm" % (tipo, teste), "r")
+				f = open("files/%s_%s_%s_%s.htm" % (api, versao, tipo, teste), "r")
 			else:
 				f = open("files/reprovado_001.htm")
 		else:
-			f = open("files/%s_%s.htm" % (tipo, teste), "r")
+			f = open("files/%s_%s_%s_%s.htm" % (api, versao, tipo, teste), "r")
 	except Exception:
 		f = open("files/html_404.htm", "r")
 	
@@ -40,9 +40,9 @@ def tipoContent(tipo):
 # Define Classes
 class SimuladorArg4(Resource):
 	def get(self, arg1, arg2, arg3, arg4):
-		return Response(response=lerArquivo(arg3, arg4),content_type=tipoContent(arg4),status=200)
+		return Response(response=lerArquivo(arg1, arg2, arg3, arg4),content_type=tipoContent(arg4),status=200)
 	def post(self, arg1, arg2, arg3, arg4):
-		return Response(response=lerArquivo(arg3, arg4),content_type=tipoContent(arg4),status=200)
+		return Response(response=lerArquivo(arg1, arg2, arg3, arg4),content_type=tipoContent(arg4),status=200)
 # Add Routes
 api.add_resource(SimuladorArg4, '/<arg1>/<arg2>/<arg3>/<arg4>')
 
