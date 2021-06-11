@@ -14,16 +14,16 @@ def lerArquivo(api, versao, tipo, teste):
 		sqlinjection = request.args.get('sql')
 		print('The sqlinjection value is: {%s}' % sqlinjection)
 		if sqlinjection == "select" or sqlinjection == "update" or sqlinjection == "drop" or sqlinjection == "delete" or sqlinjection == "alter" or sqlinjection == "create" or sqlinjection == "drop table" or sqlinjection == "where 1=1" or sqlinjection == "create user":
-			f = open("files/sqlinjection.htm", "r")
+			f = open("files/%s_%s_sqlinjection.htm" % (api, versao), "r")
 		elif tipo == "certificado":
 			if teste == "1A2E3A4E5B6D7B8E9B10A":
 				f = open("files/%s_%s_%s_%s.htm" % (api, versao, tipo, teste), "r")
 			else:
-				f = open("files/reprovado_001.htm")
+				f = open("files/%s_%s_reprovado_001.htm" % (api, versao), "r")
 		else:
 			f = open("files/%s_%s_%s_%s.htm" % (api, versao, tipo, teste), "r")
 	except Exception:
-		f = open("files/html_404.htm", "r")
+		f = open("files/%s_%s_html_404.htm" % (api, versao), "r")
 	
 	return f.read()
 
